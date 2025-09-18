@@ -45,7 +45,6 @@ public class HelloWorld {
 			{
 				runAgain = false;
 				System.out.print("Sweet! Now please give me the value of the Decimal number from 0 - 127:");
-				in.nextInt();
 				int tempDec = in.nextInt();
 				decimal = tempDec;
 				System.out.println(HelloWorld.decToBin(decimal));
@@ -84,7 +83,23 @@ public class HelloWorld {
 
 
 	public static String decToBin(int dec) {
-		String decimalAsBinary = Integer.toBinaryString(dec);
+		String decimalAsBinary = "";
+		int tempComparison = 128;
+		for (int x = 0; x < 8; x++)
+		{
+			if (tempComparison > dec)
+			{
+				decimalAsBinary = decimalAsBinary + "0";
+				tempComparison = tempComparison/2;
+			}//end of if statement
+
+			else
+			{
+				dec = dec - tempComparison;
+				decimalAsBinary = decimalAsBinary + "1";
+				tempComparison = tempComparison/2;
+			}//end of else statement
+		}//end of for loop
 		return decimalAsBinary; 
 	}//end of decToBin method
 
