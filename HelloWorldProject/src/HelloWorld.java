@@ -1,12 +1,9 @@
 /*
- * TODO: Max Korsa
- * TODO: 9/17/25
- * TODO: PD: 4
- * TODO: This program will ask the user what type of conversion they want to perform, either Binary to Decimal or Decimal to Binary.
+ * Max Korsa
+ * 9/17/25
+ * PD: 4
+ * This program will ask the user what type of conversion they want to perform, either Binary to Decimal or Decimal to Binary.
  *   	 If they enter a choice that is not one that is given, ask them again until they give a valid input. Then output the converted number.
- * 		  
- * 		 
-
  */
 
 import java.util.Scanner;
@@ -18,22 +15,50 @@ public class HelloWorld {
 		String binary = "";
 		int decimal = 0;
 
-		int x = 0;
-		while (x < 1)
+		boolean runAgain = true;
+		while (runAgain == true)
 		{
-			System.out.println("Welcome!  You have the following options: /n 1. Binary to Decimal /n 2. Decimal to Binary");
+			System.out.println("Welcome! You have the following options:" + "\n" + "1. Binary to Decimal" + "\n" + "2. Decimal to Binary");
 			int input = in.nextInt();
 
 			if (input == 1)
 			{
-				x++;
-				
+				runAgain = false;
+				System.out.print("Sweet! Now please give me the value of the Binary number that is 1 - 8 charcters in length:");
+				in.nextLine();
+				String tempBin = in.nextLine();
+				binary = tempBin;
+				System.out.println(HelloWorld.binToDec(binary));
+				System.out.println("Would you like to continue? (1 = yes 2 = no)");
+				int continue  = in.nextInt();
+				if (continue == 1)
+				{
+					runAgain = true;
+				}
+				else
+				{
+					runAgain = false;
+				}
 			}
 
 			else if (input == 2)
 			{
-				x++;
-				
+				runAgain = false;
+				System.out.print("Sweet! Now please give me the value of the Decimal number from 0 - 127:");
+				in.nextInt();
+				int tempDec = in.nextInt();
+				decimal = tempDec;
+				System.out.println(HelloWorld.decToBin(decimal));
+				System.out.println("Would you like to continue? (1 = yes 2 = no)");
+				int continue  = in.nextInt();
+				if (continue == 1)
+				{
+					runAgain = true;
+				}
+				else
+				{
+					runAgain = false;
+				}
 			}
 
 			else
@@ -41,22 +66,24 @@ public class HelloWorld {
 				System.out.println("Enter 1 or 2 based on the options given.");
 			}
 		}
-		
-		System.out.println("Okay now enter a decimal number from 0 - 127:");
-		int tempDec = in.nextInt();
-		decimal = tempDec;
-
 
 		in.close();
 	}
 
-	public static String decToBin() {
-		String temp = "hello";
+	public static int binToDec(String bin) {
+		int temp = 5;
+
+
+
 		return temp;
 	}
 
-	public static int binToDec() {
-		int temp = 5;
+
+	public static String decToBin(int dec) {
+		String temp = "hello";
+
+
+
 		return temp;
 	}
 
