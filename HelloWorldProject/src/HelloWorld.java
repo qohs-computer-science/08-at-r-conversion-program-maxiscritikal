@@ -30,16 +30,16 @@ public class HelloWorld {
 				binary = tempBin;
 				System.out.println(HelloWorld.binToDec(binary));
 				System.out.println("Would you like to continue? (1 = yes 2 = no)");
-				int continue  = in.nextInt();
-				if (continue == 1)
+				int continueAgain  = in.nextInt();
+				if (continueAgain == 1)
 				{
 					runAgain = true;
-				}
+				}//end of if statement
 				else
 				{
 					runAgain = false;
-				}
-			}
+				}//end of else statement
+			}//end of if statement
 
 			else if (input == 2)
 			{
@@ -50,42 +50,43 @@ public class HelloWorld {
 				decimal = tempDec;
 				System.out.println(HelloWorld.decToBin(decimal));
 				System.out.println("Would you like to continue? (1 = yes 2 = no)");
-				int continue  = in.nextInt();
-				if (continue == 1)
+				int continueAgain  = in.nextInt();
+				if (continueAgain == 1)
 				{
 					runAgain = true;
-				}
+				}//end of if statement
 				else
 				{
 					runAgain = false;
-				}
-			}
+				}//end of else statement
+			}//end of else if statement
 
 			else
 			{
 				System.out.println("Enter 1 or 2 based on the options given.");
-			}
-		}
+			}//end of else statement
+		}//end of while loop
 
 		in.close();
-	}
+	}//end of main method
 
 	public static int binToDec(String bin) {
-		int temp = 5;
-
-
-
-		return temp;
-	}
+		int binaryAsDecimal = Integer.parseInt(bin);
+		int finalReslut = 0;
+		for (int i = 0; i < bin.length(); i++)
+		{
+			int digit = binaryAsDecimal % 10;
+			finalReslut += digit * Math.pow(2, i);
+			binaryAsDecimal /= 10;
+		}//end of for loop
+		return finalReslut;
+	}//end of binToDec method
 
 
 	public static String decToBin(int dec) {
-		String temp = "hello";
+		String decimalAsBinary = Integer.toBinaryString(dec);
+		return decimalAsBinary; 
+	}//end of decToBin method
 
-
-
-		return temp;
-	}
-
-}
+}//end of HelloWorld class
 
