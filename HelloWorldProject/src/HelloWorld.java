@@ -3,7 +3,7 @@
  * 9/17/25
  * PD: 4
  * This program will ask the user what type of conversion they want to perform, either Binary to Decimal or Decimal to Binary.
- *   	 If they enter a choice that is not one that is given, ask them again until they give a valid input. Then output the converted number.
+ *   	 If they enter a choice that is not one that is given, ask them again until they give a valid input. Then output the converted number. And finally it will ask the user if they want to convert another number.
  */
 
 import java.util.Scanner;
